@@ -19,3 +19,8 @@ var minCostClimbingStairs = function(cost) {
     
     return Math.min(dp[0],dp[1]);
 };
+
+/*
+    T.C: O(N)
+    S.C: O(N)
+*/
