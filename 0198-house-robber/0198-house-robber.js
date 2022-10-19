@@ -3,21 +3,17 @@
  * @return {number}
  */
 
-// dynamic programming approach
+// use top-down approach this time: recursion with memoization
 
 var rob = function(nums) {
-
-    if (nums.length == 1) {return nums[0]}
-    if (nums.length == 2) {return Math.max(nums[0] , nums[1])}
+    let memo = [];
     
-    let dp = [];
-    dp[0] = nums[0];
-    dp[1] = Math.max(nums[0],nums[1]);
-    
-    for(let i=2;i<nums.length;i++) {
+    let recur = function(i) {
+        if (i >= nums.length) return 0;
+        if (memo[i]!=null) return memo[i];
         
-        dp[i] = Math.max(nums[i] + dp[i-2], dp[i-1])
+        memo[i] = Math.max(recur(i+2) + nums[i], recur(i+1))
+        return memo[i];
     }
-    
-    return Math.max(dp[dp.length-1], dp[dp.length-2])
+    return recur(0);
 };
