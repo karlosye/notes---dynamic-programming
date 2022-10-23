@@ -134,3 +134,54 @@ var climbStairs = function(n) {
 };
 ```
 
+## 55. Jump Game
+Dynamic programming with memoization: S.C-O(N) T.C-O(N^2)  
+```
+var canJump = function(nums) {
+    
+    let memo = [];
+    
+    let backtrack = (num) => {
+        
+        // if memo index has false:
+        if (memo[num] == true || memo[num] == false) {return memo[num]}
+        
+        // jump outside of the array
+        if (num >= nums.length) {return false}
+        
+        // if reaching the last index of the array:
+        if (num == nums.length - 1) {return true}
+        
+        // make a for loop:
+        for (let i=1; i<=nums[num]; i++) {
+            
+            if (num + i < nums.length && backtrack(num + i)) {return true}
+        }
+
+        // save 'false' into the memo array
+        memo[num] = false;
+        
+        return false;
+    }
+    
+    return backtrack(0);
+};
+```
+
+Greedy approach: S.C-O(1) T.C-O(N)
+```
+var canJump = function(nums) {
+    
+    let goal = nums.length - 1;
+    
+    for (let i=goal-1; i>=0; i--) {
+        
+        if (i + nums[i] >= goal) {
+            
+            goal = i;
+        }
+    }
+
+    return goal == 0;
+};
+```
