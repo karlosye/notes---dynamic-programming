@@ -210,7 +210,7 @@ var maxSubArray = function(nums) {
     return maxSum;
 };
 ```
-Dynamic programming - sliding window approach
+Dynamic programming - Kadenes algorithm
 Linear runtime and constant space
 ```
 var maxSubArray = function(nums) {
