@@ -185,3 +185,48 @@ var canJump = function(nums) {
     return goal == 0;
 };
 ```
+
+## 53. Maximum subarray
+use a nested for loop approach - Quadratic runtime 
+```
+// use a nested for loop approach - Quadratic runtime 
+
+var maxSubArray = function(nums) {
+    
+    let maxSum = nums[0];
+
+    for (let i=0; i<nums.length; i++) {
+        
+        let currSum = 0;
+        
+        for (let j=i; j<nums.length; j++) {
+            
+            currSum = currSum + nums[j];
+            
+            maxSum = Math.max(maxSum, currSum);
+        }
+    }
+    
+    return maxSum;
+};
+```
+Dynamic programming - sliding window approach
+Linear runtime and constant space
+```
+var maxSubArray = function(nums) {
+
+    // initialize maxSum and currSum:
+    let maxSum = nums[0];
+    let currSum = 0;
+    
+    for (let num of nums) {
+        
+        if (currSum < 0) {currSum = 0}
+        
+        currSum = currSum + num;
+        maxSum = Math.max(maxSum, currSum);
+    }
+    
+    return maxSum;
+};
+```
