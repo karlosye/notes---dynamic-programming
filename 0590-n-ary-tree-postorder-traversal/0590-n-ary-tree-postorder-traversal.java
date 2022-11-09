@@ -19,10 +19,11 @@ class Node {
 
 class Solution {
     
-    List<Integer> res = new ArrayList<Integer>();
+    List<Integer> res;
 
     public List<Integer> postorder(Node root) {
         
+        res = new ArrayList<Integer>();
 
         traverse(root);        
         
