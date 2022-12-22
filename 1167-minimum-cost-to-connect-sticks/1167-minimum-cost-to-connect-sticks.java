@@ -8,8 +8,6 @@ class Solution {
         // edge case: only 1 stick:
         if (sticks.length == 1) {return 0;}
         
-        Arrays.sort(sticks);
-        
         PriorityQueue<Integer> minPQ = new PriorityQueue<>();
         
         for (int number:sticks) {
