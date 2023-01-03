@@ -5,11 +5,6 @@ This is a Github repository for tracking my progress on dynamic programming.
 
 ## Topics
 
-- Tabulation vs Momoization
-- Greedy
-- Divide and conquer
-- Two pointers......... 
-
 ## Tools
 - Leethub
 
