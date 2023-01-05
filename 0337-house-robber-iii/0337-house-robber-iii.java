@@ -24,7 +24,7 @@ class Solution {
         
         int[] res = this.dfs(root);
         
-        return res[0] > res[1] ? res[0] : res[1];
+        return Math.max(res[0], res[1]);
     }
     
     // define the dfs method:
@@ -39,7 +39,7 @@ class Solution {
         
         int withRoot = left[1] + right[1] + root.val;
         
-        int leftMax = left[0] > left[1] ? left[0]:left[1];
+        int leftMax = Math.max(left[0], left[1]);
         int rightMax = right[0] > right[1] ? right[0]:right[1];
         
         int withoutRoot = leftMax + rightMax;
