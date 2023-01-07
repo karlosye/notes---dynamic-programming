@@ -5,6 +5,11 @@ This is a Github repository for tracking my progress on dynamic programming.
 
 ## Topics
 
+- Fib sequence
+- 0/1 Knapsack
+- Unbounded Knapsack
+- Longest Palindrome Substring
+
 ## Tools
 - Leethub
 
